@@ -1,6 +1,6 @@
 ﻿// =============================================================================
 // ABMZ_RandomActors.js
-// Version: 1.00
+// Version: 1.01
 // -----------------------------------------------------------------------------
 // Copyright (c) 2025 ヱビ
 // Released under the MIT license
@@ -12,7 +12,7 @@
 
 
 /*:
- * @plugindesc v1.00 ランダムにアクター名をセットするプラグイン
+ * @plugindesc v1.01 ランダムにアクター名をセットするプラグイン
  * @target MZ
  * @author ヱビ
  * 
@@ -66,6 +66,9 @@
  * ============================================================================
  * 更新履歴
  * ============================================================================
+ * 
+ * Version 1.01
+ *   NotRemoveActorEvalsのデフォルトの計算式を変更
  * 
  * Version 1.00
  *   公開
@@ -147,9 +150,9 @@
  * @arg NotRemoveActorEvals
  * @text アクター判定
  * @desc この条件に合致しなかったアクターを除外します。
- * 例：actor.hp >= 0 && actor.atk >= 10
+ * 例：actor.hp > 0 && actor.atk >= 10
  * @type string
- * @default actor.hp >= 0
+ * @default actor.hp > 0
  * 
  * 
  * @arg TargetActorVariableId
