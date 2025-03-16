@@ -1,6 +1,6 @@
 ﻿// =============================================================================
 // ABMZ_RandomActors.js
-// Version: 1.03
+// Version: 1.05
 // -----------------------------------------------------------------------------
 // Copyright (c) 2025 ヱビ
 // Released under the MIT license
@@ -12,7 +12,7 @@
 
 
 /*:
- * @plugindesc v1.03 ランダムにアクター名をセットするプラグイン
+ * @plugindesc v1.05 ランダムにアクター名をセットするプラグイン
  * @target MZ
  * @author ヱビ
  * 
@@ -67,6 +67,10 @@
  * 更新履歴
  * ============================================================================
  * 
+ * Version 1.05
+ *   プラグインパラメータのデフォルトに、actor.isBattleMember()を追加しました。
+ * Version 1.04
+ *   プラグインパラメータのデフォルトをactor.canMove()に変更しました。
  * Version 1.03
  *   プラグインパラメータのデフォルトが3（防御）だったのを10（ランダム）に
  *   変更しました。
@@ -100,7 +104,7 @@
  * @desc アクターの名前をタグアクターの名前にします。
  * 
  * @arg NameActorId
- * @text 名前用アクター1ID
+ * @text 名前用アクターID1
  * @desc このIDのアクターの名前を変更します。(1人目)
  * @type actor
  * @default 6
@@ -155,9 +159,9 @@
  * @arg NotRemoveActorEvals
  * @text アクター判定
  * @desc この条件に合致しなかったアクターを除外します。
- * 例：actor.hp > 0 && actor.atk >= 10
+ * 例：actor.hp > 0 && actor.atk >= 10 && actor.isBattleMember()
  * @type string
- * @default actor.hp > 0
+ * @default actor.canMove()
  * 
  * 
  * @arg TargetActorVariableId
